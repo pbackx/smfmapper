@@ -2,7 +2,7 @@ This project will help you in creating an Nginx mapping file that you
 can use to redirect old Simple Machine Forum 2 links to your fresh
 Discourse installation.
 
-0. Preconditions
+# 0. Preconditions
 
 Before anything in here is useful, you first need to be able to run
 the SMF2 importer that is provided with Discourse:
@@ -13,7 +13,7 @@ installation and use the backup/restore functionality to move it to the
 actual live server.
 
 
-1. Store some additional meta-data
+# 1. Store some additional meta-data
 
 I only wanted to redirect topics and not messages. However, the old topic
 IDs are not stored by the importer. This can be easily added. 
@@ -32,7 +32,7 @@ Just underneath that section add the following (currently this is line 259)
 This will store the SMF topic ID in the custom field of the posts.
 
 
-2. Make Postgres accessible from the outside.
+# 2. Make Postgres accessible from the outside.
 
 *DO NOT DO THIS ON A SERVER CONNECTED TO THE INTERNET!!*
 
@@ -46,10 +46,10 @@ Expose the Postgres port in your containers/app.yml:
 And set a password for the postgres user, for instance run "psql" and "\password"
 
 
-3. Run the Java code
+# 3. Run the Java code
 
 
-4. Using the file
+# 4. Using the file
 
 Put the created mapping file in /var/nginx/conf.d and add the following section to the bottom
 of discourse.conf:
