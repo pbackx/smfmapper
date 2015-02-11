@@ -48,6 +48,11 @@ And set a password for the postgres user, for instance run "psql" and "\password
 
 # 3. Run the Java code
 
+You may need to change:
+
+* The exact location and username/password of Postgres in SpringConfiguration
+* The format of the original URLs. My forum was hosted in a folder "dvr", which I removed during the migration
+
 
 # 4. Using the file
 
